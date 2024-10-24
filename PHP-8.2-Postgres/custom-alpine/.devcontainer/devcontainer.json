@@ -1,0 +1,27 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/php-mariadb
+{
+    "name": "PHP-HIS-Devcontainer",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspaces,type=bind"
+    ],
+    "forwardPorts": [
+        8000,
+        8080
+    ],
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "devsense.composer-php-vscode",
+                "devsense.phptools-vscode",
+                "devsense.profiler-php-vscode",
+                "onatm.open-in-new-window"
+            ]
+        }
+    }
+}

@@ -1,0 +1,41 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/php-mariadb
+{
+	"name": "PHP-Devcontainer",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces",
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/workspaces,type=bind",
+		"source=profile,target=/root,type=volume",
+		"target=/root/.vscode-server,type=volume"
+	],
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
+	"forwardPorts": [
+		5432 // Forward Postgres to Host Machine
+	],
+	"features": {
+		// "ghcr.io/cirolosapio/devcontainers-features/alpine-php-pgsql:0": {},
+		// "ghcr.io/cirolosapio/devcontainers-features/alpine-php-redis:0": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bmewburn.vscode-intelephense-client",
+				"dbaeumer.vscode-eslint",
+				"devsense.composer-php-vscode",
+				"devsense.intelli-php-vscode",
+				"devsense.phptools-vscode",
+				"devsense.profiler-php-vscode",
+				"mehedidracula.php-namespace-resolver",
+				"mrmlnc.vscode-apache",
+				"onatm.open-in-new-window",
+				"open-southeners.laravel-pint",
+				"xdebug.php-debug",
+				"zobo.php-intellisense"
+			]
+		}
+	}
+}
